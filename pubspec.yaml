@@ -1,7 +1,7 @@
 name: filepicker_macos
 description: filepicker_macos
 version: 0.0.1
-homepage:
+homepage: https://github.com/ihou/filepicker_macos
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
