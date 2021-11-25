@@ -4,6 +4,8 @@ filepicker_macos
 
 ## Getting Started
 
+![](./showcase/showcase.gif)
+
 ```dart
 import 'package:flutter/material.dart';
 
