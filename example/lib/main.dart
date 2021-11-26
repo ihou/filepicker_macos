@@ -16,18 +16,38 @@ class MyApp extends StatelessWidget {
         alignment: Alignment.center,
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: const [
+          children: [
             TextButton(
-              onPressed: FilepickerMacos.pickFile,
-              child: Text("PickFiles"),
+              onPressed: pickFiles,
+              child: const Text("PickFiles"),
             ),
             TextButton(
-              onPressed: FilepickerMacos.pickDir,
-              child: Text("PickDir"),
+              onPressed: pickDir,
+              child: const Text("PickDir"),
+            ),
+            TextButton(
+              onPressed: pickPng,
+              child: const Text("PickPng"),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  void pickFiles() {
+    FilepickerMacos.pickFiles();
+  }
+
+  void pickDir() {
+    FilepickerMacos.pickDir();
+  }
+
+  void pickPng() {
+    FilepickerMacos.pick(
+      allowedFileTypes: ["png"],
+      canChooseDirectories: false,
+      directoryURL: "~/Documents",
     );
   }
 }
