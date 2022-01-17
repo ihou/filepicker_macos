@@ -44,8 +44,9 @@ public class FilepickerMacosPlugin: NSObject, FlutterPlugin {
               canCreateDirectories:Bool?,
               allowsMultipleSelection:Bool?,
               callback:@escaping (Array<String>)->()){
+        
         let openPanel = NSOpenPanel()
-        let window = NSApplication.shared.mainWindow
+        let window = NSApplication.shared.windows.first
         openPanel.prompt = prompt
         openPanel.message = message
         openPanel.directoryURL = URL.init(string: directoryURL ?? NSHomeDirectory());

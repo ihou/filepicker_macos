@@ -34,12 +34,12 @@ class FilepickerMacos {
     return list.map((e) => e.toString()).toList(growable: false);
   }
 
-  static Future<String?> pickDir() async {
+  static Future<String?> pickDir({String? prompt, String? directory}) async {
     final List list = await pick(
-      canChooseFiles: false,
-      allowsMultipleSelection: false,
-      directoryURL: "~/Downloads",
-    );
+        canChooseFiles: false,
+        allowsMultipleSelection: false,
+        directoryURL: directory ?? "~/Downloads",
+        prompt: prompt);
     if (list.isEmpty) {
       return null;
     }
